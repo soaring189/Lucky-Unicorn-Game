@@ -1,7 +1,3 @@
-"""
-Yes/No checking function
-based on θ1_yes_no_v3
-"""
 def yes_no(question_text):
     while True:
         # Ask the user if they have played before
@@ -21,8 +17,18 @@ def yes_no(question_text):
         else:
             print("Please answer 'yes' or 'no'")
 
-show_instructions = yes_no("Have you played this game before? ")
-print(f"You entered]'{show_instructions}'")
-print()
-having_fun = yes_no("Are you having fun? ")
-print(f"You entered '{having_fun}'")
+# function to display instructions
+
+def instructions():
+    print("** How to Play *****")
+    print()
+    print("The rules of the game will go here")
+    print()
+    print("Program continues")
+    print()
+
+played_before = yes_no("Have you played this game before? ")
+if played_before == "No":
+    instructions()
+else:
+    print("Program continues")
