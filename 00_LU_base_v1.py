@@ -17,7 +17,6 @@ def yes_no(question_text):
         else:
             print("Please answer 'yes' or 'no'")
 
-# function to display instructions
 
 def instructions():
     print("** How to Play *****")
@@ -26,6 +25,22 @@ def instructions():
     print()
     print("Program continues")
     print()
+
+
+def num_check(question, low, high):
+    error = "That was not valid input\n" \
+            "Please enter a number between {} and {}\n".format(low, high)
+
+    while True:
+        try:
+            response = int(input(question))
+            if low <= response <= high:
+                return response
+            else:
+                print(error)
+        except ValueError:
+            print(error)
+
 
 played_before = yes_no("Have you played this game before? ")
 if played_before == "No":
