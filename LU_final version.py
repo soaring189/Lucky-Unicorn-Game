@@ -1,12 +1,14 @@
 import random
+
+
 def instructions():
     print()
     print(formatter("*", "How to play"))
     print()
     print("Choose a starting amount to play with - must be between $1 and $10")
     print()
-    print("Then press <enter>  to play.  You will get a random token which might"
-          "be a horse, a zebra, a donkey, or a unicorn.")
+    print("Then press <enter>  to play.  You will get a random token which "
+          "might be a horse, a zebra, a donkey, or a unicorn.")
     print()
     print("It costs $1 to play each round but, depending on your prize, you "
           "could win some of your money back.  These are the payout amounts:\n"
@@ -76,7 +78,8 @@ def generate_token(balance):
             print("\nSorry but you have run out of money")
             break
         else:
-            play_again = input("\nDo you want to play another round?\n<enter> to play again or 'X' to exit").lower()
+            play_again = input("\nDo you want to play another round?\n"
+                               "<enter> to play again or 'X' to exit").lower()
         print()
     return balance
 
@@ -87,6 +90,7 @@ def formatter(symbol, text):
     top_bottom = symbol * len(formatted_text)
     return f"{top_bottom}\n{formatted_text}\n{top_bottom}"
 
+
 print(formatter("-", "Welcome to the Lucky Unicorn Game"))
 print()
 played_before = yes_no("Have you played this game before? ")
@@ -94,7 +98,6 @@ if played_before == "No":
     instructions()
 user_balance = num_check("How much would you like to play with? $", 1, 10)
 print(f"You are playing with ${user_balance}")
-
 closing_balance = generate_token(user_balance)
 print("Thanks for playing")
 print(f"You started with ${user_balance:.2f}")
