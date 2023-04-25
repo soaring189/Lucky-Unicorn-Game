@@ -1,6 +1,9 @@
-"""Component 4 - game mechanics and looping v1 Based on 05_token_generator_v4
-but hard-wired to only allocate donkeys Gives user feedback about number of
-rounds and maintains balance.Test amount set to $5"""
+"""Component 4 - game mechanics and Looping v2
+Based on 06_rounds_v1
+removed hard-wiring so that all tokens can be allocated (randint 1-100)
+Gives user feedback about number of rounds and maintains balance.
+Test amount set to $5
+"""
 import random
 TEST_AMOUNT = 5
 balance = TEST_AMOUNT
@@ -8,7 +11,7 @@ rounds_played = 0
 play_again = ""
 while play_again != "x":
     rounds_played += 1
-    number = random.randint(6, 36)
+    number = random.randint(1, 100)
     if 1 <= number <= 5:
         token = "unicorn"
         balance += 4
